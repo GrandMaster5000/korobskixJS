@@ -7,6 +7,7 @@ import './modules/handlers';
 import './modules/attributes';
 import './modules/actions';
 import './modules/effects';
+import './components/dropdown';
 
 
 export default kor;
