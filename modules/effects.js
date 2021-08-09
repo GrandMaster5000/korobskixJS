@@ -58,3 +58,31 @@ kor.prototype.fadeOut = function(duration, finish) {
 
     return this;
 };
+
+kor.prototype.fadeToggle =  function(duration, display = 'block', finish) {
+    for (let i = 0; i < this.length; i++) {
+        if(window.getComputedStyle(this[i]).display === 'none') {
+            this[i].style.display = display;
+    
+            const _fadeIn = (complection) => {
+                this[i].style.opacity = complection;
+            };
+    
+            const anim = this.animateOverTime(duration, _fadeIn, finish);
+            requestAnimationFrame(anim);
+        } else {
+            const _fadeOut = (complection) => {
+                this[i].style.opacity = 1 - complection;
+                if(complection === 1) {
+                    this[i].style.display = 'none';
+                }
+            };
+    
+            const anim = this.animateOverTime(duration, _fadeOut, finish);
+            requestAnimationFrame(anim);
+        }
+
+    }
+
+    return this;
+};
