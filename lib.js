@@ -13,6 +13,7 @@ import './components/tab';
 import './components/accordion';
 import './components/slider';
 import './services/request';
+import './components/customizator';
 
 
 export default kor;
