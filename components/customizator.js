@@ -1,5 +1,5 @@
 'use strict';
-
+import kor from "../core";
 export default class Customizator {
     constructor ({changeElemSelector, defaultColor = '#ffffff'}) {
         this.btnBlock = document.createElement('div');
@@ -9,7 +9,6 @@ export default class Customizator {
         this.clear = document.createElement('div');
         this.changeElemSelector = changeElemSelector;
         this.defaultColor = defaultColor;
-        console.log(changeElemSelector);
 
         this.btnBlock.addEventListener('click', e => {
             this.onScaleChange(e);
@@ -151,3 +150,5 @@ export default class Customizator {
         document.querySelector('body').append(panel);  
     }
 }
+
+kor.prototype.customizatorInit = function (object) { return new Customizator(object);};
